@@ -1,0 +1,16 @@
+{
+  "name": "ex03",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "start": "node dev-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.17.3"
+  },
+  "description": "ex03: application 분리"
+}
