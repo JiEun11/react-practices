@@ -1,6 +1,7 @@
 {
-  "name": "ex03",
+  "name": "ex01",
   "version": "1.0.0",
+  "description": "",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -11,6 +12,5 @@
   "license": "ISC",
   "devDependencies": {
     "express": "^4.17.3"
-  },
-  "description": "ex03: application 분리"
+  }
 }

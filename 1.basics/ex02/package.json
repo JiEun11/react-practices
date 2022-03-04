@@ -2,7 +2,7 @@
   "name": "ex02",
   "version": "1.0.0",
   "type": "module",
-  "main": "index.mjs",
+  "main": "index.js",
   "scripts": {
     "start": "node dev-server"
   },

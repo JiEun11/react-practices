@@ -1,16 +1,17 @@
 {
-  "name": "ex03",
+  "name": "ex04",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
-    "start": "node dev-server"
+    "start": "node dev-server.mjs",
+    "build": "npx webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "webpack-cli": "^4.9.2"
   },
   "description": "ex03: application 분리"
 }

@@ -1,6 +1,6 @@
 const App = function() {
   const App = document.createElement('h1');
-  App.textContent = 'Hello Webpack';
+  App.textContent = 'Hello World';
   return App;
 }
 

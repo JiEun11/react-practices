@@ -7,12 +7,6 @@ module.exports = {
     path: path.resolve('public'),
     filename: 'bundle.js'
   },
-  module: {
-    rules:[{
-      test: /\.css$/i,
-      use: ['style-loader','css-loader']
-    }]
-  },
   devServer: {
     host:'0.0.0.0',
     port: 9090,
