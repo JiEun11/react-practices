@@ -1,0 +1,48 @@
+{
+  "name": "react-practices",
+  "description": "React Practices 1. 기본 개념(Basics) * 2. 컴포넌트(Component) * 3. 라우팅(Routing) * 4. Flux: Redux 5. Testing(rest) 6. Performance 7. 통합(Integration with BackEnd) *",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "ansi-styles": "^3.2.1",
+    "browserslist": "^4.20.0",
+    "caniuse-lite": "^1.0.30001313",
+    "chalk": "^2.4.2",
+    "color-convert": "^1.9.3",
+    "color-name": "^1.1.3",
+    "convert-source-map": "^1.8.0",
+    "debug": "^4.3.3",
+    "electron-to-chromium": "^1.4.76",
+    "escalade": "^3.1.1",
+    "escape-string-regexp": "^1.0.5",
+    "gensync": "^1.0.0-beta.2",
+    "globals": "^11.12.0",
+    "has-flag": "^3.0.0",
+    "js-tokens": "^4.0.0",
+    "jsesc": "^2.5.2",
+    "json5": "^2.2.0",
+    "minimist": "^1.2.5",
+    "ms": "^2.1.2",
+    "node-releases": "^2.0.2",
+    "picocolors": "^1.0.0",
+    "safe-buffer": "^5.1.2",
+    "semver": "^6.3.0",
+    "source-map": "^0.5.7",
+    "supports-color": "^5.5.0",
+    "to-fast-properties": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiEun11/react-practices.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiEun11/react-practices/issues"
+  },
+  "homepage": "https://github.com/JiEun11/react-practices#readme"
+}
