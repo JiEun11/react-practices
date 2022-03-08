@@ -7,15 +7,25 @@ var users = [{
   no: 2,
   name: 'soo',
   email: 'soo@gmail.com'
-}]; // 객체 분해 (ES6)
+}];
+var {
+  no
+} = users[0];
+console.log(no); // 객체 분해 (ES6)
 // function print(o){
 //   // template 문자열(ES6)
 //   console.log(o.no + ", " + o.name + ", " + o.email);
 //   console.log(`${ o.no}, ${ o.name}, ${ o.email}`);
 // }
 
-function print(no, name, email) {
+function print(_ref) {
+  var {
+    no,
+    name,
+    email
+  } = _ref;
   // template 문자열(ES6)
+  console.log(o.no + ", " + o.name + ", " + o.email);
   console.log("".concat(no, ", ").concat(name, " ").concat(email));
 } // for..of (ES6)
 

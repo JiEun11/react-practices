@@ -9,6 +9,9 @@ const users = [{
   email: 'soo@gmail.com'
 }];
 
+const {no} = users[0];
+console.log(no);
+
 // 객체 분해 (ES6)
 // function print(o){
 //   // template 문자열(ES6)
@@ -16,8 +19,9 @@ const users = [{
 //   console.log(`${ o.no}, ${ o.name}, ${ o.email}`);
 // }
 
-function print(no,name,email){
+function print({no,name,email}){
   // template 문자열(ES6)
+  console.log(o.no + ", " + o.name + ", " + o.email);
   console.log(`${no}, ${name} ${email}`);
 }
 
