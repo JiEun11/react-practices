@@ -1,4 +1,4 @@
-ex02: Application1 - application 분리 (file 분리)
+ex02: Application1 - application 분리 (file 분리) --> 결론 : error 발생 
 
 1. 복잡한 application은 코드를 분리해서 개발하는 것이 원칙
 2. application 코드를 여러 js 파일로 옮기는 단순한 방식 사용

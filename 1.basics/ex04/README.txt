@@ -14,8 +14,10 @@ ex04: Application Bundling(번들링) - webpack
   5) Bundling 
 
 5. Javascript뿐만 아니라 다양한 assets(image, css, font)들도 module로 취급한다.
-
 6. 설치 
   $ npm i -D webpack webpack-cli
   $ npm ./node_modules/.bin/webpack --version
   $ npx webpack --version
+
+7. package.json scription("build" stage)
+8. $ npm run build (bundling 작업)
