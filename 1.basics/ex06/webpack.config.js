@@ -10,10 +10,13 @@ module.exports = {
   },
   module: {
     rules:[{
+      test: /\.js$/i,
+      exclude: /node_modules/,
+      use:['babel-loader']
+    }, {
       test: /\.(sa|sc|c)ss$/i,
       use: ['style-loader','css-loader', 'sass-loader']
-    },
-    {
+    }, {
       test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i,
       type: 'asset/resource'
     }]
