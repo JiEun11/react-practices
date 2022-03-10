@@ -21,7 +21,7 @@ webpack.config.js
 
 3. npm scripting
 "scripts": {
-    "start": "npx webpack serve --progress --mode development --env",
+    "debug": "npx webpack serve --progress --mode development --env",
     "build": "npx webpack"
   }
 
