@@ -3,7 +3,7 @@ const path = require('path')
 module.exports = function(env) {
   return {
     mode: 'development',
-    entry: path.resolve('src/${env.src}/index.js'),
+    entry: path.resolve(`src/${env.src}/index.js`),
     output:{
       path: path.resolve('public'),
       filename: 'main.js',
