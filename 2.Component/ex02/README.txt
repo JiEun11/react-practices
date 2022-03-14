@@ -1,10 +1,10 @@
 ex02 : Component Styling(Working with UI)
 
 01. Inline Styling
-02. Normal CSS
-03. Normal CSS
-04. CSS Module
-05. 
+02. Normal CSS (css-loader options: {module: false})
+03. Normal CSS (css-loader options: {module: true})
+04. CSS Module (css-loader options: {module: true})
+05. SASS & SCSS
 06. 
 07. 
 08.
