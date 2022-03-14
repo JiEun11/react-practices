@@ -4,6 +4,7 @@ import TaskList from './TaskList';
 const App = () => {
   let data = require('../public/data.json');
   console.log(data);
+
   return (
     <div id="App">
       <TaskList data={data} />
