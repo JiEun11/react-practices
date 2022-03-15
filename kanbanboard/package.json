@@ -4,7 +4,7 @@
   "description": "kanbanboard",
   "main": "index.js",
   "scripts": {
-    "debug": "npx webpack serve --progress --mode development",
+    "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development",
     "build": "npx webpack"
   },
   "keywords": [],
