@@ -1,15 +1,10 @@
 import React from 'react';
-import TaskList from './TaskList';
+import KanbanBoard from './KanbanBoard';
+import './assets/css/App.css';
 
 const App = () => {
-  let data = require('../public/data.json');
-  console.log(data);
-
   return (
-    <div id="App">
-      <TaskList data={data} />
-    </div>
-
+    <KanbanBoard />
   )
 }
 
