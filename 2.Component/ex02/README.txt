@@ -25,13 +25,13 @@ $ npm i react react-dom
 
 
 2. 설정
-babel.config.json
-webpack.config.js
+config/babel.config.json
+config/webpack.config.js
 
 
 3. 스크립트 추가하기
-"scripts": {
-    "debug": "npx webpack serve --progress --mode development --env",
+ "scripts": {
+    "debug": "npx webpack serve --config config/webpack.config.js --progress --mode development --env",
     "build": "npx webpack"
   }
 
