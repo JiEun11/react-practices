@@ -5,11 +5,19 @@ import cards from './data.json';
 
 const KanbanBoard = () => {
   console.log(cards);
+
+  // const result = [0, 1, 2, 3, 4].filter(function(e){
+  //   return e % 2 ==0 ;
+  // });
+  // const result = [0, 1, 2, 3, 4].filter(e => e % 2 ==0);
+
+  // console.log(result);
+
   return (
     <div className={styles.KanbanBoard}> 
-      <CardList title={'ToDo'} />
-      <CardList title={'In Progress'} />
-      <CardList title={'Done'}/>
+      <CardList title={'ToDo'} cards={cards.filter(e => e.status === 'ToDo')} />
+      <CardList title={'In Progress'} cards={cards.filter(e => e.status === 'In Progress')} />
+      <CardList title={'Done' } cards={cards.filter(e => e.status === 'Done')}/>
     </div>
   )
 }
