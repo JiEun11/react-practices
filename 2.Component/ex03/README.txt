@@ -3,8 +3,8 @@ ex03 : Component - React Event
 01 : Inline Handler
     ex) <div onclick='click();'> 
 
-02 : Function Handler
-
+02 : Function Handler 
+  - ex03 > src > 03
 
 03 : Synthetic Event(이벤트 합성)
 
