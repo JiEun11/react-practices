@@ -75,7 +75,7 @@ ul {
   width: 1em;
   content: "▸";
 }
-.Card__Title--is-open:before {
+.Card__Title__open:before {
   content: "▾";
 }
 
@@ -84,7 +84,7 @@ ul {
   padding-top: 10px;
   border-top: dashed 1px #ddd;
 }
-.TaskList__Task--remove:after {
+.TaskList__Task__remove:after {
   display: inline-block;
   color: #d66;
   content: "✖";

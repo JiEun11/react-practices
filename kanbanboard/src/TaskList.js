@@ -1,18 +1,15 @@
 import React from 'react'
-import TaskListItem from './TaskListItem';
+import Task from './Task';
 
-const TaskList = ({data}) => {
+const TaskList = ({tasks}) => {
   return (
-    <ul>
-      {data.map((oneTask) => <TaskListItem
-                              key={oneTask.no}
-                              no={oneTask.no}
-                              title={oneTask.title}
-                              description={oneTask.description}
-                              status={oneTask.status}
-                              tasks={oneTask.tasks} />)}
-    </ul>
+    <div className='TaskList'>
+      <ul>
+        {tasks.map((task) => <Task 
+                            key={task.no} 
+                            name={task.name} /> )}
+      </ul>
+    </div>
   )
 }
-
 export default TaskList
