@@ -13,10 +13,12 @@ ex03 : Component - React Event
     ex) click, mousehover, etc..
 
 05 : Event Handler with Using 'ref'(Event Handler에서 ref를 사용하기)
-  - Functional Component
+  - Functional Component 
+  - src/05
 
 06 : Event Handler with Using 'ref'(Event Handler에서 ref를 사용하기)
-  - Class Component
+  - Class Component 
+  - src/06
 
 
 
