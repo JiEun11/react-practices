@@ -2,9 +2,9 @@ import React, {useState} from 'react';
 
 export default function ({ begin, step }) {
     const [val, setVal] = useState(begin);
-
-    const {a} = {a:10, b:20};
-    const [b, c] = [1, 2, 3, 4];
+    console.log("function component re rendering!!!");
+    // const {a} = {a:10, b:20};
+    // const [b, c] = [1, 2, 3, 4];
 
     return (
         <div>
