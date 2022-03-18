@@ -15,8 +15,13 @@ ex04 : Component - State
 
 
 02 : 제어 Component
-  src/02 : 제어 component
-  src/03 : 비제어 component
+  1. input, textarea, option과 같은 폼 Component 중에 사용자 입력에 따라서 state값이 변경되고 Rendering 하는 Component를 제어(Controlled) Component라 한다.
+
+  2. 
+  3.
+  4. 예제
+    - src/02 : 제어 component
+    - src/03 : 비제어 component
 
 
 03 : 상태(Stateful) Component vs 순수(Pure, Dumb) Component
