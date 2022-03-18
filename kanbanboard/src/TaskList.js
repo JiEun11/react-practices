@@ -7,7 +7,8 @@ const TaskList = ({tasks}) => {
       <ul>
         {tasks.map((task) => <Task 
                             key={task.no} 
-                            name={task.name} /> )}
+                            name={task.name}
+                            done={task.done}/> )}
       </ul>
     </div>
   )
