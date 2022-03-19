@@ -6,6 +6,7 @@ import Emaillist from './Emaillist';
 import data from './assets/json/data.json';
 
 const App = () => {
+  console.log(data);
   return (
     <div className={'App'}>
       <RegisterForm />

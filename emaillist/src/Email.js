@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from './assets/scss/Email.scss';
 
-const Email = () => {
+const Email = ({firstName, lastName, email}) => {
   return (
     <li className={styles.Email}>
-      <h4>둘리</h4>
+      <h4>{firstName}{lastName}</h4>
       <br />
-      <span>dooly@gmail.com</span>
+      <span>{email}</span>
     </li>
   )
 }
