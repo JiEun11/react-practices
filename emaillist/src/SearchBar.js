@@ -1,10 +1,13 @@
 import React from 'react'
 import styles from './assets/scss/Searchbar.scss';
 
-const SearchBar = () => {
+const SearchBar = ({callBack}) => {
   return (
     <div className={styles.Searchbar}>
-      찾기: <input type="text" placeholder="찾기" />
+      <input 
+        type="text" 
+        placeholder="찾기"
+        onChange={e=> callBack(e.target.value)}/>
     </div>
   )
 }
