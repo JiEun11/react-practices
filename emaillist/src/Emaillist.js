@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './assets/scss/Emaillist.scss';
 import Email from './Email';
+import {PropTypes} from 'prop-types';
 
 const Emaillist = ({emails}) => {
   return (
@@ -17,3 +18,7 @@ const Emaillist = ({emails}) => {
 }
 
 export default Emaillist
+
+Emaillist.propTypes = {
+  emails: PropTypes.arrayOf(PropTypes.shape(Email.propTypes))
+}
