@@ -1,10 +1,24 @@
 ex05 : Component - Life Cycle
 
-01 : Class Component
-  - Life Cycle Methods
+01 : Class Component Life Cycle 
+  1) Lifecycle I : mount
+    - constructor가 실행이 된다.
+    - getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
+    - render()
+    - * componentDidMount : 컴포넌트 생성을 마치고 렌더링 작업이 끝난 후,
 
-02 : Functional Component Life Cycle(Alternative Life Cylce Methods)
-  - useEffect Hook
+  2) Lifecycle II : update
+    - getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
+    - shouldComponentUpdate : props나 state을 변경했을 때, 리렌더링 여부를 결정한다.
+    - render()
+    - * componentDidUpdate : DOM update가 끝난 직후 호출된다. DOM 작업이 가능하다.
+
+  3) Lifecycle III : Unmount
+    - ComponentWillUnmount : 컴포넌트를 DOM에서 제거하기 전
+
+
+02 : Functional Component Life Cycle(Alternative Life Cylce Methods) by useEffect Hook
+
 
 1. 설치
    $ npm i -D webpack webpack-cli webpack-dev-server style-loader css-loader node-sass sass-loader babel-loader @babel/core @babel/cli @babel/preset-env @babel/preset-react
