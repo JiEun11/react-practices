@@ -2,16 +2,17 @@ ex05 : Component - Life Cycle
 
 01 : Class Component Life Cycle 
   1) Lifecycle I : mount
-    - constructor가 실행이 된다.
-    - getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
-    - render()
-    - * componentDidMount : 컴포넌트 생성을 마치고 렌더링 작업이 끝난 후,
+      [1]constructor가 실행이 된다.
+      [2]getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
+      [3]render()
+    * [4]componentDidMount : 컴포넌트 생성을 마치고 렌더링 작업이 끝난 후,
 
   2) Lifecycle II : update
-    - getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
-    - shouldComponentUpdate : props나 state을 변경했을 때, 리렌더링 여부를 결정한다.
-    - render()
-    - * componentDidUpdate : DOM update가 끝난 직후 호출된다. DOM 작업이 가능하다.
+      [1]getDerivedStateFromProps : props로 받아온 값을 state에 동기화한다.[react v16.3~]
+      [2]shouldComponentUpdate : props나 state을 변경했을 때, 리렌더링 여부를 결정한다.
+      [3]render()
+      [4]getSnapshotBeforeUpdate : render 메소드 호출 후, DOM에 변화를 반영하기 직전에 호출
+    * [5]componentDidUpdate : DOM update가 끝난 직후 호출된다. DOM 작업이 가능하다.
 
   3) Lifecycle III : Unmount
     - ComponentWillUnmount : 컴포넌트를 DOM에서 제거하기 전
