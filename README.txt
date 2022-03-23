@@ -6,3 +6,6 @@ React Practices
 5. Testing(rest)
 6. Performance
 7. 통합(Integration with BackEnd) *
+  emaillist
+  gallery
+  mysite
