@@ -11,29 +11,38 @@ export default function App() {
       return{
         hours : ('0'+hours).slice(-2),
         minutes : ('0'+date.getMinutes()).slice(-2),
-        seconds : ('0'+date.getSeconds()).slice(-2)
+        seconds : ('0'+date.getSeconds()).slice(-2),
+        ticks : state ? state.ticks + 1 : 0
       }; 
     };
 
     const [state, setState] = useState(getCurrentClockTime());
     
     useEffect(()=> {
-      console.log("After Rendering");
+      console.log("After App Rendering");
+      setTimeout(function(){
+        setState(getCurrentClockTime());
+        console.log("App ticks =======>   " + state.ticks);
+      }, 1000);
     });
 
     useEffect(()=>{
-      console.log("After Mount");
-      setInterval(function(){
-        setState(getCurrentClockTime());
-      }, 1000);
-
+      console.log("After App Mount");
+      
     }, []);
 
     return (
-            <Clock
-                message={'ex05: useEffect Hook example'}
-                hours={state.hours}
-                minutes={state.minutes}
-                seconds={state.seconds}/>
+      <div className='clock'>
+        {
+          state.ticks % 10 == 0 ? 
+          null : 
+          <Clock
+                  message={'ex05: useEffect Hook example'}
+                  hours={state.hours}
+                  minutes={state.minutes}
+                  seconds={state.seconds}/>
+        }
+      </div>
+            
     );
 }
