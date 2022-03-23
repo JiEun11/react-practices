@@ -13,7 +13,7 @@ export default class App extends Component {
       const hours = date.getHours();
     
       return{
-        hours : ('0'+(hours == 0 ? 12 : (hours > 11 ? hours-12 : hours))).slice(-2),
+        hours : ('0'+(hours == 0 ? 12 : (hours > 12 ? hours-12 : hours))).slice(-2),
         minutes : ('0'+date.getMinutes()).slice(-2),
         seconds : ('0'+date.getSeconds()).slice(-2),
         session : hours > 11 ? "pm" : "am",
