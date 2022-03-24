@@ -1,13 +1,23 @@
+# JavaScript Project
 **/node_modules
 
+# IDE - for VSCode
+**/.vscode
+**/.sln
+**/.sw?
+
+# IDE - for Eclipse
 **/.classpath
 **/.project
 **/.settings
 **/target
 
+# IDE - for intelliJ
 **/.idea
 **/.iml
 
+# IDE maven & gradle
 **/build
 
+# for mac
 **/.DS_Store
