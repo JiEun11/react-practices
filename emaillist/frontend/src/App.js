@@ -6,11 +6,11 @@ import Emaillist from './Emaillist';
 import data from './assets/json/data.json';
 
 const App = () => {
-  const [emails, setEmails] = useState(data);
+  const [emails, setEmails] = useState([]);
   // const [keyword, setKeyword] = useState("");
 
   useEffect( async ()=> {
-    const response = await fetch('/api/no',{
+    const response = await fetch('/api',{
       method : 'get',
       headers : {
         'Content-Type' : 'application/json',
@@ -18,6 +18,18 @@ const App = () => {
       },
       body: null
     });
+
+    if(!response.ok){
+      console.log("error!!!!", response.status, response.statusText);
+      return;
+    }
+    const json = await response.json();  //response.json()는 비동기 함수
+    if(json.result !== 'success'){
+      console.log("error!!!!", json.message);
+      return;
+    }
+
+    setEmails(json.data);
 
     console.log(response);
   }, []); // mount 되었을 때 실행되도록
