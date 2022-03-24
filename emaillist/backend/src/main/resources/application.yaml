@@ -8,10 +8,10 @@ spring:
 spring:
    mvc:
 
-      # Spring MVC View Prefix/Suffix
-      view:
-         prefix: /WEB-INF/views/
-         suffix: .jsp
+      # Spring MVC View Prefix/Suffix - view resolver 이제 필요 X
+      #view:
+      #  prefix: /WEB-INF/views/
+      #   suffix: .jsp
 
       # Path pattern used for static resources
       static-path-pattern: /assets/**
