@@ -2,13 +2,13 @@ import React from 'react'
 import styles from './assets/scss/Searchbar.scss';
 import {PropTypes} from 'prop-types';
 
-export default function SearchBar({callBack}){
+export default function SearchBar({callback}){
   return (
     <div className={styles.Searchbar}>
       <input 
         type="text" 
         placeholder="찾기"
-        onChange={e=> callBack(e.target.value)}/>
+        onChange={e=> callback(e.target.value)}/>
     </div>
   )
 }
