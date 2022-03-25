@@ -38,6 +38,18 @@ spring:
       password: webdb
 
 ---
+# development profile : 
+spring:
+   config:
+      activate:
+         on-profile: development
+         
+   #devtools - live reload
+   devtools:
+      livereload:
+         enabled: true
+
+---
 # mybatis
 mybatis:
    config-location: classpath:mybatis/configuration.xml

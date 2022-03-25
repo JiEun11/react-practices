@@ -35,7 +35,7 @@ const App = () => {
   }, []); // mount 되었을 때 실행되도록
 
   const notifyKeywordChange = function(keyword){
-    console.log(keyword);
+    console.log("/api?kw="+keyword);
     // setKeyword(kw);
     const result = data.filter(e => e.firstName.indexOf(keyword) != -1 || e.lastName.indexOf(keyword) != -1 || e.email.indexOf(keyword) != -1)
     //중요한건 emails를 직접 변경하지 않는다는 것. 
