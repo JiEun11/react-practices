@@ -31,8 +31,9 @@ public class ApiController {
 	
 	@PostMapping("/api")
 	public ResponseEntity<JsonResult> create(@RequestBody EmaillistVo vo) {
+		emaillistRepository.insert(vo);
 		return ResponseEntity
 				.status(HttpStatus.OK)
-				.body(JsonResult.success(emaillistRepository.insert(vo)));
+				.body(JsonResult.success(vo));
 	}
 }

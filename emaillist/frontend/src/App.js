@@ -41,7 +41,7 @@ const App = () => {
 
     try{
       const response = await fetch(`/api?kw=${keyword}`,{
-        method : 'get',
+        method : 'post',
         headers : {
           'Content-Type' : 'application/json',
           'Accept': 'application/json'
@@ -70,9 +70,40 @@ const App = () => {
     // setEmails(result);  // 기존 상태를 새 객체로 만들어주는 것이 '함수형 프로그래밍'의 원리, 그래야 state가 변경됨을 감지하고 render를 할 수 있음.
 }
 
-  const notifyEmailAdd = function(email){
+  const notifyEmailAdd = async function(email){
     console.log('post : /api', email);
+    try{
+      const response = await fetch(`/api`,{
+        method : 'post',
+        headers : {
+          'Content-Type' : 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(email)   //JSON 객체 넣어주면 string으로 바뀐다.
+      });
+
+      if(!response.ok){
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();  //response.json()는 비동기 함수
+
+      if(json.result !== 'success'){
+        console.log("error!!!!", json.message);
+        throw new Error(`${json.result} ${json.message}`);
+      }
+
+      // const newEmails = [];
+      // newEmails[0] = json.data;
+      // for(var i = 0; i < emails.length; i++){
+      //   newEmails[i+1] = emails[i];
+      // } 이 코드가 아래로 
+      setEmails([json.data, ...emails]);
+
+  } catch(err){
+      console.log(err);
   }
+}
 
   return (
     <div className={'App'}>
