@@ -29,14 +29,19 @@ export default function App() {
     //   })
     // }, []);
 
+    // useEffect(()=>{
+    //   console.log("After App Mount");
+    // }, []);
+
     useEffect(()=>{
-      console.log("After App Mount");
+      console.log("After state was changed");
       setTimeout(function(){
         setState(getCurrentClockTime());
+        console.log("App ticks before : " + ticks);
         setTicks(ticks + 1);
-        console.log("App ticks =======>   " + ticks);
-      }, 1000);
-    }, [state]);
+        console.log("App ticks after : " + ticks);
+      }, 4000);
+    },[state]);
 
     return (
       <div className='clock'>
