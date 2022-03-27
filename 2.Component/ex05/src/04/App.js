@@ -36,11 +36,12 @@ export default function App() {
     useEffect(()=>{
       console.log("After state was changed");
       setTimeout(function(){
+        console.log('timer started');
         setState(getCurrentClockTime());
         console.log("App ticks before : " + ticks);
         setTicks(ticks + 1);
         console.log("App ticks after : " + ticks);
-      }, 4000);
+      }, 1000);
     },[state]);
 
     return (
