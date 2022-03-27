@@ -39,7 +39,8 @@ export default function App() {
         console.log('timer started');
         setState(getCurrentClockTime());
         console.log("App ticks before : " + ticks);
-        setTicks(ticks + 1);
+        // setTicks(ticks + 1);
+        setTicks(prevTicks => prevTicks + 1);
         console.log("App ticks after : " + ticks);
       }, 1000);
     },[state]);
