@@ -63,4 +63,8 @@ server:
       encoding:
          charset: UTF-8
          enabled: true
-
+---
+# logging
+logging:
+   level:
+      root: WARN
