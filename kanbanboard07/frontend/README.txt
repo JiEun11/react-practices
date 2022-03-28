@@ -7,7 +7,7 @@
    config/webpack.config.js
 
 3. 스크립트 추가하기
-   "scripts": {
+  "scripts": {
     "build": "npm run build:frontend && npm run build:backend",
     "build:frontend": "npx webpack --config config/webpack.config.js --mode production",
     "build:backend": "cd ../backend && mvn clean package",
