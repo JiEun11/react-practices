@@ -14,6 +14,16 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
 
+---
+
+### `Errors what I got`
+
+1. Cannot find module 'sass'
+   - I got this error when I was going to change themes
+   - so let's do `npm i sass ` on your terminal.
+
+---
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
