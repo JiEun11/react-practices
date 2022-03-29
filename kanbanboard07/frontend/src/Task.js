@@ -1,18 +1,23 @@
-import React,{useState} from 'react'
+import React from 'react'
 import styles from './assets/css/Task.css';
 import {PropTypes} from 'prop-types';
 
-const Task = ({no, name, done, callbackDelete}) => {
+const Task = ({no, name, done, cardNo, callbackUpdateStatus, callbackDeleteTask}) => {
 
   return (
     <li className={styles.TaskList__Task}>
       <input 
         type="checkbox" 
         checked={done === 'Y'}
-        onChange={e => {}} />
+        onChange={e => {
+          console.log(`${e.target.value} ${no} done 누름 done -> ${!(done==='Y')}`)
+          const updateTask = {no: `${no}`, name: `${name}`, done: `${ (done==='Y')? 'N' : 'Y' }`, cardNo: `${cardNo}`};
+          console.log(updateTask);
+          callbackUpdateStatus(updateTask);
+        }} />
       {name}
       <a href="#" 
-        onClick={e=>callbackDelete(no)} 
+        onClick={e=>callbackDeleteTask(no)} 
         className={styles.TaskList__Task__remove}></a>
     </li>
   )

@@ -29,7 +29,7 @@
 		]]>
 	</delete>
 
-	<update id="updateDone" parameterType="taskvo">
+	<update id="updateStatus" parameterType="taskvo">
 		<![CDATA[
 			UPDATE task SET done=#{done } WHERE no=#{no }		
 		]]>

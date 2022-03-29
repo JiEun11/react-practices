@@ -2,7 +2,7 @@ import React from 'react'
 import Task from './Task';
 import styles from './assets/css/TaskList.css';
 
-const TaskList = ({callbackAdd, callbackDelete, cardNo, tasks}) => {
+const TaskList = ({callbackAddTask, callbackDeleteTask, callbackUpdateStatus, cardNo, tasks}) => {
 
   return (
     <div className={styles.TaskList}>
@@ -13,7 +13,8 @@ const TaskList = ({callbackAdd, callbackDelete, cardNo, tasks}) => {
                             name={task.name}
                             done={task.done}
                             cardNo={task.cardNo}
-                            callbackDelete={callbackDelete}/> )}
+                            callbackDeleteTask={callbackDeleteTask}
+                            callbackUpdateStatus={callbackUpdateStatus}/> )}
         <input
           type="text" 
           className={styles.TaskList__add_task}
@@ -23,7 +24,7 @@ const TaskList = ({callbackAdd, callbackDelete, cardNo, tasks}) => {
                 console.log(`call notifyAddTask(${e.target.value}) cardNo : ${cardNo}`);
                 const newTask = {name: `${e.target.value}`, done:'N', cardNo: `${cardNo}`};
                 e.target.value='';
-                callbackAdd(newTask);
+                callbackAddTask(newTask);
               }             
           }}/>
       </ul>

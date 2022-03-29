@@ -61,11 +61,33 @@ const Card = ({no, title, description}) => {
     }
   }
 
-  const updateTaskStatus = async function(no){
+  const updateTaskStatus = async function(task){
     try {
-      const response = await fetch(`/api/card/task`)
+      const response = await fetch(`/api/card/task`,{
+        method: 'put',
+        headers: {
+          'Content-Type' : 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(task)
+      });
+      if(!response.ok){
+        throw new Error(`${response.status} ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if(json.result !== 'success'){
+        console.log("error!!!!", json.message);
+        throw new Error(`${json.result} ${json.message}`);
+      }
+      const {no} = json.data;
+      setTasks(tasks.map(task => {
+        return task.no === no ? { ...json.data } : task;
+      }))
+
     } catch (error) {
-      
+      console.log(error);
     }
   }
 
@@ -107,7 +129,7 @@ const Card = ({no, title, description}) => {
       {showDetails ? 
         <div className={styles.Card__Details}>
           {description}
-          <TaskList callbackAdd={notifyAddTask} callbackDelete={deleteTask} cardNo={no} tasks={tasks}/> 
+          <TaskList callbackAddTask={notifyAddTask} callbackDeleteTask={deleteTask} callbackUpdateStatus={updateTaskStatus} cardNo={no} tasks={tasks}/> 
         </div> 
         : null}
     </div>

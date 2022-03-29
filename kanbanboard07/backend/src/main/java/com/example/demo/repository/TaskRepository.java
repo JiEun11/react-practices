@@ -26,8 +26,8 @@ public class TaskRepository {
 		return 1 == sqlSession.delete("task.delete", no);
 	}
 
-	public boolean updateUser(TaskVo vo) {
-		return 1==sqlSession.update("task.updateDone", vo);
+	public boolean updateTask(TaskVo vo) {
+		return 1==sqlSession.update("task.updateStatus", vo);
 	}
 
 }

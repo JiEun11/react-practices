@@ -61,9 +61,12 @@ public class ApiController {
 				.body(JsonResult.success(no));
 	}
 	
-	@PutMapping("/")
-	public ResponseEntity<JsonResult> updateForTask(){
-		
+	@PutMapping("/card/task")
+	public ResponseEntity<JsonResult> updateForTask(@RequestBody TaskVo vo){
+		boolean result = taskRepository.updateTask(vo);
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(JsonResult.success(vo));
 	}
 
 }
