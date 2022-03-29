@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 import styles from './assets/css/Task.css';
 import {PropTypes} from 'prop-types';
 
-const Task = ({name, done}) => {
+const Task = ({no, name, done, callbackDelete}) => {
 
   return (
     <li className={styles.TaskList__Task}>
@@ -11,7 +11,9 @@ const Task = ({name, done}) => {
         checked={done === 'Y'}
         onChange={e => {}} />
       {name}
-      <a href="#" className={styles.TaskList__Task__remove}></a>
+      <a href="#" 
+        onClick={e=>callbackDelete(no)} 
+        className={styles.TaskList__Task__remove}></a>
     </li>
   )
 }

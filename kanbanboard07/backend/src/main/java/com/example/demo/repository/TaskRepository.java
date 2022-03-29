@@ -18,4 +18,12 @@ public class TaskRepository {
 		return sqlSession.selectList("task.findAllByNo", cardNo);
 	}
 	
+	public boolean insertTask(TaskVo vo) {
+		return 1==sqlSession.insert("task.insert", vo);
+	}
+
+	public boolean deleteTask(Long no) {
+		return 1==sqlSession.delete("task.delete",no);
+	}
+	
 }
