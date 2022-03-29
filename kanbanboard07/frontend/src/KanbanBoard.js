@@ -18,10 +18,8 @@ const KanbanBoard = () => {
       const response = await fetch('/api/card',{
         method: 'get',
         headers : {
-          'Content-Type' : 'application/json',
           'Accept': 'application/json'
         },
-        body: null
       });
       if(!response.ok){
         throw new Error(`${response.status} ${response.statusText}`);

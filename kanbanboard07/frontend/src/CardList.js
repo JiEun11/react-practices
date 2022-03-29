@@ -4,16 +4,15 @@ import Card from './Card';
 import {PropTypes} from 'prop-types';
 
 export default function CardList ({title, cards}){
-  console.log(title, cards);
   return (
     <div className={styles.CardList}>
         <h1>{title}</h1>
         <div>
           {cards.map((card)=> <Card 
                               key={card.no}
+                              no={card.no}
                               title={card.title}
                               description={card.description}
-                              tasks={card.tasks}
                               />)}
         </div>
     </div>

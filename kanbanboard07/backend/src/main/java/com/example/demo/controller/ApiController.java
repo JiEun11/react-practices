@@ -22,6 +22,8 @@ public class ApiController {
 
 	@GetMapping("/card")
 	public ResponseEntity<JsonResult> read() {
-		return ResponseEntity.status(HttpStatus.OK).body(JsonResult.success(cardRepository.findAll()));
+		return ResponseEntity
+				.status(HttpStatus.OK)
+				.body(JsonResult.success(cardRepository.findAll()));
 	}
 }
