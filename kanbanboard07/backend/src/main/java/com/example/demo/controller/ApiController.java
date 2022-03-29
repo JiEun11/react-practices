@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 //import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,21 +32,21 @@ public class ApiController {
 	private TaskRepository taskRepository;
 
 	@GetMapping("/card")
-	public ResponseEntity<JsonResult> readCard() {
+	public ResponseEntity<JsonResult> readForCard() {
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(cardRepository.findAll()));
 	}
 	
 	@GetMapping("/card/task")
-	public ResponseEntity<JsonResult> readTask(@RequestParam(value="cardNo", required=true, defaultValue="")Long cardNo){
+	public ResponseEntity<JsonResult> readForTask(@RequestParam(value="cardNo", required=true, defaultValue="")Long cardNo){
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(taskRepository.findAllByNo(cardNo)));
 	}
 	
 	@PostMapping("/add")
-	public Object create(@RequestBody TaskVo vo) {
+	public ResponseEntity<JsonResult> createForTask(@RequestBody TaskVo vo) {
 		boolean result = taskRepository.insertTask(vo);
 		return ResponseEntity
 				.status(HttpStatus.OK)
@@ -53,12 +54,16 @@ public class ApiController {
 	}
 	
 	@DeleteMapping("/delete/task/{no}")
-	public Object deleteTask(@PathVariable("no")Long no) {
+	public ResponseEntity<JsonResult> deleteForTask(@PathVariable("no")Long no) {
 		boolean result = taskRepository.deleteTask(no);
 		return ResponseEntity
 				.status(HttpStatus.OK)
 				.body(JsonResult.success(no));
 	}
-
+	
+	@PutMapping("/")
+	public ResponseEntity<JsonResult> updateForTask(){
+		
+	}
 
 }

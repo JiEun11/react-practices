@@ -61,6 +61,14 @@ const Card = ({no, title, description}) => {
     }
   }
 
+  const updateTaskStatus = async function(no){
+    try {
+      const response = await fetch(`/api/card/task`)
+    } catch (error) {
+      
+    }
+  }
+
   const deleteTask = async function(no){
     try {
       if(window.confirm('삭제하시겠습니까?')){
