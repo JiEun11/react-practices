@@ -4,7 +4,7 @@ import styles from './assets/css/TaskList.css';
 
 const TaskList = ({tasks}) => {
   return (
-    <div className='TaskList'>
+    <div className={styles.TaskList}>
       <ul>
         {tasks.map((task) => <Task 
                             key={task.no} 
@@ -21,6 +21,6 @@ const TaskList = ({tasks}) => {
           }}/>
       </ul>
     </div>
-  )
+  );
 }
 export default TaskList

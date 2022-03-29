@@ -19,8 +19,9 @@ const KanbanBoard = () => {
         method: 'get',
         headers : {
           'Accept': 'application/json'
-        },
+        }
       });
+      
       if(!response.ok){
         throw new Error(`${response.status} ${response.statusText}`);
       }
