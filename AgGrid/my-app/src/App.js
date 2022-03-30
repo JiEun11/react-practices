@@ -34,7 +34,12 @@ const App = () => {
   ]);
 
   const defaultColDef = {
-    sortable: true, filter: true, floatingFilter:true, editable:true, flex:1
+    sortable: true, 
+    filter: true, 
+    floatingFilter:true, 
+    editable:true, 
+    flex:1,
+
   }
 
   const onExportClick=useCallback(()=>{
@@ -52,6 +57,7 @@ const App = () => {
         columnDefs={columnDefs}
         defaultColDef={defaultColDef}
         rowSelection="multiple"
+        pagination={true}
         >
       </AgGridReact>
     </div>
