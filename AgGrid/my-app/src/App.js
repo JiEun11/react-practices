@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { AgGridColumn, AgGridReact } from 'ag-grid-react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
+import { AgGridReact } from 'ag-grid-react';
 import './App.scss';
 // import 'ag-grid-community/dist/styles/ag-grid.css';
 // import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
@@ -28,19 +28,31 @@ const App = () => {
 
   const [columnDefs] = useState([
     // {field: "make", sortable: true, filter: true },
-    {field: "make", sortable: true, filter: true, checkboxSelection: true },
-    {field: "model", sortable: true, filter: true},
-    {field: "price", sortable: true, filter: true},
+    {headerName: "Make", field: "make", checkboxSelection: true},
+    {field: "model"},
+    {field: "price"},
   ]);
+
+  const defaultColDef = {
+    sortable: true, filter: true, floatingFilter:true, editable:true, flex:1
+  }
+
+  const onExportClick=useCallback(()=>{
+    gridRef.current.api.exportDataAsCsv();
+  },[]);
+
 
   return(
     <div className='ag-theme-alpine' style={{height: 400, width: 600}}>
       <button onClick={onButtonClick}>Get selected rows</button>
+      <button onClick={onExportClick}>Download CSV export file</button>
       <AgGridReact 
         ref={gridRef}
         rowData={rowData} 
         columnDefs={columnDefs}
-        rowSelection="multiple">
+        defaultColDef={defaultColDef}
+        rowSelection="multiple"
+        >
       </AgGridReact>
     </div>
   );
