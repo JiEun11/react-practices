@@ -45,7 +45,7 @@ public class ApiController {
 				.body(JsonResult.success(taskRepository.findAllByNo(cardNo)));
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/task")
 	public ResponseEntity<JsonResult> createForTask(@RequestBody TaskVo vo) {
 		boolean result = taskRepository.insertTask(vo);
 		return ResponseEntity
@@ -53,7 +53,7 @@ public class ApiController {
 				.body(JsonResult.success(vo));
 	}
 	
-	@DeleteMapping("/delete/task/{no}")
+	@DeleteMapping("/card/task/{no}")
 	public ResponseEntity<JsonResult> deleteForTask(@PathVariable("no")Long no) {
 		boolean result = taskRepository.deleteTask(no);
 		return ResponseEntity

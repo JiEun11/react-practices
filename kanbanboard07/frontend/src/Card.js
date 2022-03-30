@@ -35,7 +35,7 @@ const Card = ({no, title, description}) => {
 
   const notifyAddTask = async function(task){
     try{
-      const response = await fetch(`/api/add`,{
+      const response = await fetch(`/api/task`,{
         method: 'post',
         headers: {
           'Content-Type' : 'application/json',
@@ -94,7 +94,7 @@ const Card = ({no, title, description}) => {
   const deleteTask = async function(no){
     try {
       if(window.confirm('삭제하시겠습니까?')){
-        const response = await fetch(`/api/delete/task/${no}`,{
+        const response = await fetch(`/api/card/task/${no}`,{
           method: 'delete',
         });
 
