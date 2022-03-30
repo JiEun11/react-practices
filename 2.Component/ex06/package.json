@@ -1,0 +1,13 @@
+{
+  "name": "ex06",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "1. 절대로 컴포넌트의 상태를 직접 조작하지 말 것.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
