@@ -23,8 +23,8 @@ export default function App() {
                 <Route path='gallery' element={<Gallery />}/>
                 <Route path='guestbook' element={<Guestbook />}/>
                 {/* <Route path='about' element={<About />}/> */}
-                <Route exact path='about' element={<About />}>
-                  <Route exact path='me' element={<Me />}/>
+                <Route path='about/*' element={<About />}>
+                  <Route path=':me' element={<Me />}/>
                   {/* <Route path='location' element={<Location />}/> */}
                 </Route>
                 <Route path='user/login' element={<Login />} />
