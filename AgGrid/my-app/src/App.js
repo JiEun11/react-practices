@@ -1,8 +1,8 @@
 import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { AgGridReact } from 'ag-grid-react';
-import './App.scss';
-// import 'ag-grid-community/dist/styles/ag-grid.css';
-// import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+// import './App.scss';
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 const App = () => {
   // const [rowData] = useState([
@@ -19,6 +19,7 @@ const App = () => {
       .then(rowData => setRowData(rowData))
   }, []);
 
+  // Enable Selection
   const onButtonClick = e => {
     const selectedNodes = gridRef.current.api.getSelectedNodes()
     const selectedData = selectedNodes.map( node => node.data )
@@ -28,18 +29,17 @@ const App = () => {
 
   const [columnDefs] = useState([
     // {field: "make", sortable: true, filter: true },
-    {headerName: "Make", field: "make", checkboxSelection: true},
+    {headerName: "Make", field: "make", checkboxSelection: true, tooltipField:"make"},
     {field: "model"},
     {field: "price"},
+    {field: "price"}
   ]);
 
   const defaultColDef = {
     sortable: true, 
     filter: true, 
     floatingFilter:true, 
-    editable:true, 
-    flex:1,
-
+    editable:true
   }
 
   const onExportClick=useCallback(()=>{
@@ -48,19 +48,21 @@ const App = () => {
 
 
   return(
-    <div className='ag-theme-alpine' style={{height: 400, width: 600}}>
-      <button onClick={onButtonClick}>Get selected rows</button>
-      <button onClick={onExportClick}>Download CSV export file</button>
-      <AgGridReact 
-        ref={gridRef}
-        rowData={rowData} 
-        columnDefs={columnDefs}
-        defaultColDef={defaultColDef}
-        rowSelection="multiple"
-        pagination={true}
-        >
-      </AgGridReact>
-    </div>
+      <div className='ag-theme-alpine' style={{width: 1000, height: 500}}>
+        <button onClick={onButtonClick}>Get selected rows</button>
+        <button onClick={onExportClick}>Download CSV export file</button>
+        <AgGridReact 
+          ref={gridRef}
+          rowData={rowData} 
+          columnDefs={columnDefs}
+          defaultColDef={defaultColDef}
+          rowSelection="multiple"
+          enableBrowserTooltips={true}
+          pagination={true}
+          paginationAutoPageSize={true}
+          >
+        </AgGridReact>
+      </div>
   );
 };
 
