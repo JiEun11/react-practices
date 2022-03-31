@@ -9,7 +9,7 @@ export default function App() {
     const handleHashChange = () => {
       const route = window.location.hash.substring(1); //url만 떼어오기
       console.log(route);  
-      setRoute(window.location.hash.substring(1));
+      setRoute(route);
     };
 
     useEffect(()=> {
@@ -20,7 +20,7 @@ export default function App() {
       }
     }, []);
 
-    return (function(){
+    return (() => {
       switch(route){
         case '/' : 
           return <Main />;
