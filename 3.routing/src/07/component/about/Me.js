@@ -6,5 +6,5 @@ export default function Me(){
     <div className={styles.Me}>
       <h2>Bella입니다.</h2>
     </div>
-  )
+  );
 }
