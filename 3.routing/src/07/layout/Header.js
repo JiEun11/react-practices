@@ -6,8 +6,13 @@ export default function Header() {
     return (
         <header>
             <h1>
-                <NavLink to={'/'}>Header</NavLink>
+                <NavLink to={'/'}>Mysite</NavLink>
             </h1>
+            <ul>
+              <li><NavLink to={'/user/login'}>Login</NavLink></li>
+              <li><NavLink to={'/user/settings'}>Settings</NavLink></li>
+              <li><NavLink to={'/user/join'}>Join</NavLink></li>
+            </ul>
         </header>
     );
 }
