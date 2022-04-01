@@ -24,9 +24,9 @@ export default function App() {
                 <Route path='gallery' element={<Gallery />}/>
                 <Route path='guestbook' element={<Guestbook />}/>
                 {/* <Route path='about' element={<About />}/> */}
-                <Route path='about' element={<About />}>
-                  <Route path=':me' element={<Me />}/>
-                  <Route path=':location' element={<Location />}/>
+                <Route element={<About />}>
+                  <Route path='about/me' element={<Me />}/>
+                  <Route path='about/location' element={<Location />}/>
                 </Route>
                 <Route path='user/login' element={<Login />} />
                 <Route path='user/settings' element={<Settings />} />
