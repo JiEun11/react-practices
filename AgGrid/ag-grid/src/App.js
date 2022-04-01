@@ -32,6 +32,7 @@ const App = () => {
     {headerName: "Make", field: "make", checkboxSelection: true, tooltipField:"make"},
     {field: "model"},
     {field: "price"},
+    {field: "price"},
     {field: "price"}
   ]);
 
