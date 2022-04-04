@@ -30,15 +30,17 @@ spring:
       suffix : .html
       cache : false
 
-   # datasource
-   datasource:
-      driver-class-name: org.mariadb.jdbc.Driver
-      url: jdbc:mysql://192.168.0.68:3307/webdb?characterEncoding=utf8
-      username: webdb
-      password: webdb
-
+# mybatis
+mybatis:
+   config-location: classpath:mybatis/configuration.xml
+  
+ # logging
+logging:
+   level:
+      root: INFO
 ---
-# development profile : 
+
+# development profile configuration
 spring:
    config:
       activate:
@@ -49,12 +51,13 @@ spring:
       livereload:
          enabled: true
 
----
-# mybatis
-mybatis:
-   config-location: classpath:mybatis/configuration.xml
-   
----
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://192.168.0.68:3307/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb
+
 # server
 server:
    port: 8080
@@ -64,7 +67,27 @@ server:
          charset: UTF-8
          enabled: true
 ---
-# logging
-logging:
-   level:
-      root: WARN
+#
+# production profile configuration
+#
+spring:
+   config:
+      activate:
+         on-profile: production
+              
+   # datasource
+   datasource:
+      driver-class-name: org.mariadb.jdbc.Driver
+      url: jdbc:mysql://192.168.0.68:3307/webdb?characterEncoding=utf8
+      username: webdb
+      password: webdb   
+         
+# server
+server:
+   port: 8881
+   servlet:
+      context-path: /
+      encoding:
+         charset: UTF-8
+         enabled: true
+
