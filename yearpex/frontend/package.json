@@ -1,12 +1,12 @@
 {
-  "name": "antd-demo",
+  "name": "frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^4.19.5",
+    "materialize-css": "^1.0.0-rc.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
@@ -35,14 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "jest": {
-    "transformIgnorePatterns": [
-      "/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$"
-    ]
-  },
-  "devDependencies": {
-    "less": "^4.1.2",
-    "less-loader": "^10.2.0"
   }
 }
