@@ -3,14 +3,14 @@ import './assets/scss/App.scss';
 import RegisterForm from './RegisterForm';
 import SearchBar from './SearchBar';
 import Emaillist from './Emaillist';
-import data from './assets/json/data.json';
+// import data from './assets/json/data.json';
 
 const App = () => {
   const [emails, setEmails] = useState([]);
 
   useEffect( async ()=> {
     try{
-      const response = await fetch('http://localhost:8080/api',{
+      const response = await fetch('/api',{
         method : 'get',
         headers : {
           'Content-Type' : 'application/json',
@@ -41,7 +41,7 @@ const App = () => {
 
     try{
       const response = await fetch(`/api?kw=${keyword}`,{
-        method : 'post',
+        method : 'get',
         headers : {
           'Content-Type' : 'application/json',
           'Accept': 'application/json'
