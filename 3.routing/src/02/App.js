@@ -22,6 +22,7 @@ export default function App() {
         e.preventDefault(); // a tag click시 이동 막음 
 
         const url = e.target.href.substring(e.target.href.lastIndexOf("/"));
+        console.log(e.target.href)
         console.log(url);
 
         window.history.pushState({page: url}, e.target.text, url);  // stat에 클릭하는 url이 하나씩 들어감

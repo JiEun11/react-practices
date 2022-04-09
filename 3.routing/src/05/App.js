@@ -12,7 +12,7 @@ export default function App() {
         <Router>
             <Routes>
                 <Route path='/' element={<Main />}/>
-                <Route path='gallery' element={<Gallery />}/>
+                <Route path='/gallery' element={<Gallery />}/>
                 <Route path='guestbook' element={<Guestbook />}/>
                 <Route path='about' element={<About />}/>
             </Routes>
