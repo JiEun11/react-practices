@@ -27,7 +27,7 @@ const Main = () => {
       </Header>
       <Layout className="site-layout">
         <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-          <SiteMenu />
+          <SiteMenu onCollapse={collapsed}/>
         </Sider>
 
         <Layout>

@@ -1,6 +1,7 @@
 import { Menu } from "antd";
 import MenuItem from "antd/lib/menu/MenuItem";
 import SubMenu from "antd/lib/menu/SubMenu";
+import {NavLink} from "react-router-dom";
 import React from "react";
 import {
   DesktopOutlined, 
@@ -16,7 +17,8 @@ import {
   SmileOutlined 
 } from "@ant-design/icons";
 
-const SiteMenu = () => {
+const SiteMenu = ({onCollapse}) => {
+  console.log(onCollapse)
   return (
     <Menu
       theme="dark"
@@ -26,15 +28,14 @@ const SiteMenu = () => {
     >
       <Menu.Item 
         key="1" 
-        icon={<SmileOutlined style={{ padding: '45px', fontSize: '300%'}}/>}
-        style={{ height: "80px", color:'white'}}
-      >
-      </Menu.Item>
+        icon={<SmileOutlined style={{ padding: '45px 45px 45px 45px', fontSize: '300%'}}/>}
+        style={{ height: "80px", color:'white'}} 
+      ></Menu.Item>
       
-      <Menu.Item key="1" style={{padding: '45px', color:'white'}}>
+      <Menu.Item key="2" style={{padding: '20px 20px 20px 30px', color:'white'}}>
         홍길동 님 
         <SettingOutlined />
-      </Menu.Item>
+      </Menu.Item> 
     
 
 
@@ -46,7 +47,7 @@ const SiteMenu = () => {
       <SubMenu icon={<BulbOutlined  />} key="sub2" title="평가계획 관리">
         <SubMenu key="sub2-1" title="평가계획 관리">
           <Menu.Item key="sub2-1-1">진도율</Menu.Item>
-          <Menu.Item key="sub2-1-2">담당 통제 현황</Menu.Item>
+          <Menu.Item key="sub2-1-2"><NavLink to={'/evaluation_search'}>담당 통제 현황</NavLink></Menu.Item>
           <Menu.Item key="sub2-1-3">공지사항</Menu.Item>
           <Menu.Item key="sub2-1-4">자료실</Menu.Item>
         </SubMenu>
