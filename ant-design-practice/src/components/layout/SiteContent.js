@@ -6,7 +6,7 @@ import MyTable from "../MyTable";
 import Sample from "../Sample";
 import { InnerCon } from "../InnerCon";
 
-const SiteContent = ({ test }) => {
+const SiteContent = ({ test, children }) => {
   return (
     <Content style={{ margin: "0 16px" }}>
       <Breadcrumb style={{ margin: "16px 0" }}>
@@ -17,6 +17,7 @@ const SiteContent = ({ test }) => {
         className="site-layout-background"
         style={{ padding: 24, minHeight: 360 }}
       >
+        {children}
         <UploadCompo/>
         <Sample/>
         <InnerCon />
