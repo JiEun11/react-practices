@@ -15,7 +15,8 @@ const createWindow = () => {
   });
 
   // and load the index.html of the top
-  mainWindow.loadFile("index.html");
+  // mainWindow.loadFile("index.html");
+  mainWindow.loadURL("http://localhost:3000");
 
   // Open the DevTools
   // mainWindow.webContents.openDevTools()
